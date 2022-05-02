@@ -35,7 +35,7 @@ chico = getbb(place_name = "UPZ Chicó Lago Bogotá Colombia",featuretype = "bou
 bar = opq(bbox = st_bbox(chico)) %>%
       add_osm_feature(key = "amenity", value = "bar") %>%
       osmdata_sf() %>% .$osm_points
-
+leaflet() %>% addTiles() %>% addPolygons(data = chico)
 leaflet() %>% addTiles() %>% addCircleMarkers(data=bar)
 
 # gen lines
